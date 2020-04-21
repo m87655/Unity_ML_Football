@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ball : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     /// <summary>
     /// 足球是否進入球門
