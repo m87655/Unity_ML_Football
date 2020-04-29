@@ -1,6 +1,6 @@
-﻿using MLAgents;
+﻿using UnityEngine;
+using MLAgents;
 using MLAgents.Sensors;
-using UnityEngine;
 
 public class Robot : Agent
 {
@@ -34,11 +34,11 @@ public class Robot : Agent
         rigBall.angularVelocity = Vector3.zero;
 
         // 隨機機器人位置
-        Vector3 posRobot = new Vector3(Random.Range(-2f, 2f), 0.1f, Random.Range(-2f, 0f));
+        Vector3 posRobot = new Vector3(Random.Range(-1f, 1f), 0.1f, Random.Range(-1f, 0f));
         transform.position = posRobot;
 
         //隨機足球位置
-        Vector3 posBall = new Vector3(Random.Range(-2f, 2f), 0.1f, Random.Range(1f, 2f));
+        Vector3 posBall = new Vector3(Random.Range(-0.5f, 0.5f), 0.1f, Random.Range(1f, 2f));
         rigBall.position = posBall;
 
         //足球尚未進入球門
@@ -83,16 +83,4 @@ public class Robot : Agent
         }
     }
 
-    /// <summary>
-    /// 探索：讓開發者測試環境
-    /// </summary>
-    /// <returns></returns>
-    public override float[] Heuristic()
-    {
-        //提供開發者控制的方式
-        var action = new float[2];
-        action[0] = Input.GetAxis("Horizontal");
-        action[1] = Input.GetAxis("Vertical");
-        return action;
-    }
 }
